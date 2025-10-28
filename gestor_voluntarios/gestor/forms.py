@@ -4,7 +4,7 @@ from .models import Voluntario, Evento
 class VoluntarioForm(forms.ModelForm):
     class Meta:
         model = Voluntario
-        fields = ['nombre', 'email', 'telefono', 'fecha_registro']  
+        fields = ['nombre', 'email', 'telefono']  
 
 class EventoForm(forms.ModelForm):
     class Meta:

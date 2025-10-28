@@ -1,20 +1,20 @@
 from django.urls import path
 from . import views
 
-app_name = 'voluntarios'
+app_name = 'gestor'
 
 urlpatterns = [
     # Voluntarios
-    path('voluntario/', views.voluntario_lista, name='voluntario_lista'),
-    path('voluntario/crear/', views.voluntario_crear, name='voluntario_crear'),
-    path('voluntario/<int:id>/', views.voluntario_detalle, name='voluntario_detalle'),
-    path('voluntario/<int:id>/editar/', views.voluntario_editar, name='voluntario_editar'),
-    path('voluntario/<int:id>/eliminar/', views.voluntario_eliminar, name='voluntario_eliminar'),
+    path('voluntarios/', views.lista_voluntarios, name='lista_voluntarios'),
+    path('voluntarios/crear/', views.crear_voluntario, name='crear_voluntario'),
+    path('voluntarios/<int:pk>/', views.detalle_voluntario, name='detalle_voluntario'),
+    path('voluntarios/<int:pk>/actualizar/', views.actualizar_voluntario, name='actualizar_voluntario'),
+    path('voluntarios/<int:pk>/eliminar/', views.confirmar_eliminar_voluntario, name='confirmar_eliminar_voluntario'),
     
-    # Eventos (similar estructura)
-    path('eventos/', views.evento_lista, name='evento_lista'),
-    path('evento/crear/', views.evento_crear, name='evento_crear'),
-    path('evento/<int:id>/', views.evento_detalle, name='evento_detalle'),
-    path('evento/<int:id>/editar/', views.evento_editar, name='evento_editar'),
-    path('evento/<int:id>/eliminar/', views.evento_eliminar, name='evento_eliminar'),
+    # Eventos
+    path('eventos/', views.lista_eventos, name='lista_eventos'),
+    path('eventos/crear/', views.crear_evento, name='crear_evento'),
+    path('eventos/<int:pk>/', views.detalle_evento, name='detalle_evento'),
+    path('eventos/<int:pk>/actualizar/', views.actualizar_evento, name='actualizar_evento'),
+    path('eventos/<int:pk>/eliminar/', views.confirmar_eliminar_evento, name='confirmar_eliminar_evento'),
 ]
