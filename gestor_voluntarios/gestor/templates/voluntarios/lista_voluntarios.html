@@ -2,7 +2,7 @@
 {% block title %}Listado de Voluntarios{% endblock %}
 {% block content %}
 <h1>Listado de Voluntarios</h1>
-<a class="btn btn-primary mb-3" href="{% url 'voluntario_crear' %}">Agregar Voluntario</a>
+<a class="btn btn-primary mb-3" href="{% url 'gestor:voluntario_crear' %}">Agregar Voluntario</a>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -23,9 +23,9 @@
       <td>{{ voluntario.telefono|default:"---" }}</td>
       <td>{{ voluntario.fecha_registro|date:"d/m/Y H:i" }}</td>
       <td>
-        <a class="btn btn-sm btn-info" href="{% url 'voluntario_detalle' voluntario.id %}">Ver</a>
-        <a class="btn btn-sm btn-warning" href="{% url 'voluntario_editar' voluntario.id %}">Editar</a>
-        <a class="btn btn-sm btn-danger" href="{% url 'voluntario_eliminar' voluntario.id %}">Eliminar</a>
+        <a class="btn btn-sm btn-info" href="{% url 'gestor:detalle_voluntario' voluntario.id %}">Ver</a>
+        <a class="btn btn-sm btn-warning" href="{% url 'gestor:voluntario_form' voluntario.id %}">Editar</a>
+        <a class="btn btn-sm btn-danger" href="{% url 'gestor:voluntario_confirm_delete' voluntario.id %}">Eliminar</a>
       </td>
     </tr>
     {% empty %}

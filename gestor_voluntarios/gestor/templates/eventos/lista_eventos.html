@@ -1,9 +1,9 @@
-{% extends 'gestion/base.html' %}
+{% extends 'base.html' %}
 {% block title %}Listado de Eventos{% endblock %}
 {% block content %}
 <h1>Listado de Eventos</h1>
 
-<a href="{% url 'crear_evento' %}" class="btn btn-primary mb-3">Agregar Evento</a>
+<a href="{% url 'gestor:crear_evento' %}" class="btn btn-primary mb-3">Agregar Evento</a>
 
 <table class="table table-striped">
   <thead>
