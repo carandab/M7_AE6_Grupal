@@ -23,7 +23,7 @@ def crear_voluntario(request):
                 with transaction.atomic():
                     voluntario = form.save()
                 messages.success(request, "Voluntario creado correctamente.")
-                return redirect('lista_voluntarios')
+                return redirect('gestor:lista_voluntarios')
             except IntegrityError:
                 messages.error(request, "Ocurrió un error al crear al voluntario.")
         else:
@@ -41,7 +41,7 @@ def actualizar_voluntario(request, pk):
                 with transaction.atomic():
                     form.save()
                 messages.success(request, "Voluntario actualizado correctamente.")
-                return redirect('lista_voluntarios')
+                return redirect('gestor:lista_voluntarios')
             except IntegrityError:
                 messages.error(request, "Ocurrió un error al actualizar el voluntario.")
         else:
@@ -55,7 +55,7 @@ def confirmar_eliminar_voluntario(request, pk):
     if request.method == 'POST':
         voluntario.delete()
         messages.success(request, "Voluntario eliminado.")
-        return redirect('lista_voluntarios')
+        return redirect('gestor:lista_voluntarios')
     return render(request, 'voluntarios/voluntario_confirm_delete.html', {'voluntario': voluntario})
 
 
@@ -82,7 +82,7 @@ def crear_evento(request):
                 with transaction.atomic():
                     evento = form.save()
                 messages.success(request, "Evento creado correctamente.")
-                return redirect('lista_eventos')
+                return redirect('gestor:lista_eventos')
             except IntegrityError:
                 messages.error(request, "Ocurrió un error al crear el evento.")
         else:
@@ -103,7 +103,7 @@ def actualizar_evento(request, pk):
                 with transaction.atomic():
                     form.save()
                 messages.success(request, "Evento actualizado correctamente.")
-                return redirect('lista_eventos')
+                return redirect('gestor:lista_eventos')
             except IntegrityError:
                 messages.error(request, "Ocurrió un error al actualizar el evento.")
         else:
@@ -120,7 +120,7 @@ def confirmar_eliminar_evento(request, pk):
     if request.method == 'POST':
         evento.delete()
         messages.success(request, "Evento eliminado.")
-        return redirect('lista_eventos')
+        return redirect('gestor:lista_eventos')
     return render(request, 'eventos/evento_confirm_delete.html', {
         'evento': evento
     })

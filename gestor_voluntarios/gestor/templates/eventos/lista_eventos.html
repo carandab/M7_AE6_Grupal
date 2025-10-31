@@ -9,7 +9,7 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>TÃtulo del Evento</th>
+      <th>Título del Evento</th>
       <th>Fecha</th>
       <th>Voluntarios Asignados</th>
       <th>Acciones</th>
@@ -23,9 +23,9 @@
       <td>{{ evento.fecha }}</td>
       <td>{{ evento.voluntarios.count }}</td>
       <td>
-        <a class="btn btn-sm btn-info" href="{% url 'detalle_evento' evento.id %}">Ver</a>
-        <a class="btn btn-sm btn-warning" href="{% url 'actualizar_evento' evento.id %}">Editar</a>
-        <a class="btn btn-sm btn-danger" href="{% url 'eliminar_evento' evento.id %}">Eliminar</a>
+        <a class="btn btn-sm btn-info" href="{% url 'gestor:detalle_evento' evento.id %}">Ver</a>
+        <a class="btn btn-sm btn-warning" href="{% url 'gestor:actualizar_evento' evento.id %}">Editar</a>
+        <a class="btn btn-sm btn-danger" href="{% url 'gestor:eliminar_evento' evento.id %}">Eliminar</a>
       </td>
     </tr>
     {% empty %}

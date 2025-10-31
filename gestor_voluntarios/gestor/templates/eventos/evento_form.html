@@ -29,13 +29,13 @@
     <div class="col-md-6">
       {{ form.voluntarios.label_tag }} {{ form.voluntarios }}
       {{ form.voluntarios.errors }}
-      <div class="form-text">MantÃ©n presionada la tecla Ctrl (o Cmd en Mac) para seleccionar varios voluntarios.</div>
+      <div class="form-text">Mantén presionada la tecla Ctrl (o Cmd en Mac) para seleccionar varios voluntarios.</div>
     </div>
   </div>
 
   <div class="mt-4">
     <button type="submit" class="btn btn-primary">{{ accion }}</button>
-    <a href="{% url 'lista_eventos' %}" class="btn btn-secondary">Cancelar</a>
+    <a href="{% url 'gestor:lista_eventos' %}" class="btn btn-secondary">Cancelar</a>
   </div>
 </form>
 {% endblock %}
